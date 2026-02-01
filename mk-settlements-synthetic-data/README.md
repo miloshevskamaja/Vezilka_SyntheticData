@@ -72,7 +72,11 @@
 
 ##  Структура на репозиториумот
 mk-settlements-synthetic-data/
+
 ├── data/ # Влезна скрипта за генерирање податоци (CSV)
+
 ├── result/ # Излезни податоци (JSONL)
+
 ├── notebooks/ # Експеримент
+
 └── README.md
