@@ -1068,39 +1068,3 @@ def summarize(name, df):
 summarize("SFT", sft_df)
 summarize("IE", ie_df)
 
-# --- Evaluation 2: “grounding vs annotations” sanity ---
-print("\nIE grounding sanity:")
-print("records with >=4 grounded mentions:", int((ie_df["quoted_mentions_in_kg"] >= 4).sum()), "/", len(ie_df))
-print("records with 0 annotated entities:", int((ie_df["entities_annotated"] == 0).sum()), "/", len(ie_df))
-
-# --- Viz 1: coverage (SFT) ---
-plt.figure()
-plt.hist(pd.to_numeric(sft_df["coverage"], errors="coerce").dropna(), bins=10)
-plt.title("SFT: Coverage distribution")
-plt.xlabel("coverage")
-plt.ylabel("count")
-plt.show()
-
-# --- Viz 2: unknown entity ratio (SFT) ---
-plt.figure()
-plt.hist(pd.to_numeric(sft_df["unknown_entity_ratio"], errors="coerce").dropna(), bins=10)
-plt.title("SFT: Unknown entity ratio distribution")
-plt.xlabel("unknown_entity_ratio")
-plt.ylabel("count")
-plt.show()
-
-# --- Viz 3: IE grounding + entity density ---
-plt.figure()
-plt.hist(ie_df["quoted_mentions_in_kg"], bins=12)
-plt.title("IE: Grounded KG mentions in text")
-plt.xlabel("quoted_mentions_in_kg")
-plt.ylabel("count")
-plt.show()
-
-plt.figure()
-plt.hist(ie_df["entities_annotated"], bins=12)
-plt.title("IE: Entities per record (as annotated)")
-plt.xlabel("entities_annotated")
-plt.ylabel("count")
-plt.show()
-
