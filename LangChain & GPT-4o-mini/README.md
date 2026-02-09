@@ -9,9 +9,9 @@
 **Пример на излез**
 
 {
-    "sifra_proizvod": "P0001",
-    "kategorija": "Козметика",
-    "podkategorija": "Шампони",
+    "sifra_proizvod": "P0001",/n
+    "kategorija": "Козметика",/n
+    "podkategorija": "Шампони",/n
     "brend": "L'Oreal",
     "celen_pol": "Унисекс",
     "cenoven_opseg": "Средна класа",
